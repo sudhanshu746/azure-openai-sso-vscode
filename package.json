@@ -1,0 +1,61 @@
+{
+  "name": "azure-openai-sso",
+  "displayName": "Azure OpenAI SSO",
+  "description": "This extension provides a seamless Single Sign-On (SSO) experience for accessing Azure OpenAI services from Visual Studio Code, using the Azure Identity library.",
+  "version": "0.0.8",
+  "publisher": "sudhanshu746",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sudhanshu746/azure-openai-sso-vscode.git"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "azure-openai-sso.helloWorld",
+        "title": "HelloWorld"
+      },
+      {
+        "command": "azure-openai-sso.login",
+        "category": "AZURE-OPENAI-SSO",
+        "title": "login"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "yarn run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "yarn run compile && yarn run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "dependencies": {
+    "@azure/identity": "^4.0.0",
+    "@azure/identity-vscode": "^1.0.0",
+    "@types/vscode": "^1.85.0"
+  },
+  "devDependencies": {
+    "@azure/identity": "^4.0.0",
+    "@azure/identity-vscode": "^1.0.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^18.19.5",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "@vscode/test-cli": "^0.0.4",
+    "@vscode/test-electron": "^2.3.8",
+    "assert": "^2.1.0",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3"
+  },
+  "preview": true
+}
